@@ -5,10 +5,10 @@ variable "gcp_project_id" {
 
 variable "region" {
   description = "Region where the instance will be created"
-  type = string
+  type        = string
 }
 
 variable "zone" {
   description = "Zone within the selected region"
-  type = string
+  type        = string
 }
