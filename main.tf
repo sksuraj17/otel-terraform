@@ -1,3 +1,9 @@
+provider "google" {
+  project = var.gcp_project_id
+  region  = var.region
+  zone    = var.zone
+}
+
 resource "google_compute_instance" "open-telemetry-project" {
   boot_disk {
     auto_delete = true
