@@ -21,7 +21,7 @@ resource "google_compute_instance" "open-telemetry-project" {
     goog-ops-agent-policy = "v2-x86-template-1-4-0"
   }
 
-  machine_type = "e2-highmem-2"
+  machine_type = "e2-standard-4"
 
   metadata = {
     enable-osconfig = "TRUE"
