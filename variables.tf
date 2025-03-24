@@ -1,4 +1,4 @@
-variable "gcp_credentials"{
+variable "gcp_credentials" {
   description = "GCP Credentials"
   type        = string
 }
