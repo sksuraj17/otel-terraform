@@ -36,15 +36,17 @@ jobs:
       run: terraform plan
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GCP_PROJECTS_SERVICE_ACCOUNT }}
+        TF_VAR_var.gcp_credentials: ${{ secrets.GCP_PROJECTS_SERVICE_ACCOUNT }}
         TF_VAR_gcp_project_id: ${{ secrets.GCP_PROJECT_ID }}
         TF_VAR_region: ${{ secrets.GCP_REGION }}
         TF_VAR_zone: ${{ secrets.GCP_ZONE }}
-        
+
     - name: Terraform Apply - Phase 3
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GCP_PROJECTS_SERVICE_ACCOUNT }}
+        TF_VAR_var.gcp_credentials: ${{ secrets.GCP_PROJECTS_SERVICE_ACCOUNT }}
         TF_VAR_gcp_project_id: ${{ secrets.GCP_PROJECT_ID }}
         TF_VAR_region: ${{ secrets.GCP_REGION }}
         TF_VAR_zone: ${{ secrets.GCP_ZONE }}
